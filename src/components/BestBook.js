@@ -18,7 +18,7 @@ export default function BestBooks() {
     <div>
       bestbooks
       {books.map((book) => (
-        <p>{book.name}</p>
+        <p>{book.title}</p>
       ))}
     </div>
   );
