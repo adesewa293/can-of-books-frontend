@@ -39,18 +39,21 @@ export default function BookFormModal({ show, onClose }) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+        <br />
         <input
           type="text"
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
+        <br />
         <input
           type="text"
           placeholder="Status"
           value={status}
           onChange={(e) => setStatus(e.target.value)}
         />
+        <br />
         <button onClick={handleAddBook}>Save Book</button>
       </div>
     </div>
