@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function BestBooks() {
+export default function BestBook() {
   const [books, setBooks] = useState([]);
 
   const getBooks = async () => {
@@ -15,7 +15,7 @@ export default function BestBooks() {
 
   return (
     <div>
-      bestbooks
+      bestbook
       {books.length > 0 && books.map((book) => (
         <div>
           <p>{book.title}</p>
