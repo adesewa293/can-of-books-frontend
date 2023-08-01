@@ -1,19 +1,20 @@
-import './App.css';
+import { HelmetProvider } from 'react-helmet-async';
 import BestBook from './components/BestBook';
-import {Route,BrowserRouter,Routes} from 'react-router-dom'
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import About from './components/About';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-            <div>
-                <Routes>
-                    <Route path="/About" element={<About/>} />
-                    <Route path="/BestBook" element={<BestBook/>} />
-                </Routes>
-            </div>
+    <div className='App'>
+      <HelmetProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<BestBook />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
         </BrowserRouter>
+      </HelmetProvider>
     </div>
   );
 }
