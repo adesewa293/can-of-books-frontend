@@ -18,7 +18,7 @@ export default function BestBook() {
     <div>
       bestbook
       {books.length > 0 && books.map((book) => (
-        <div>
+        <div key={book._id}>
           <p>{book.title}</p>
           <p>{book.description}</p>
           <p>{book.status}</p>
