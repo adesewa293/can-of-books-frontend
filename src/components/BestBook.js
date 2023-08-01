@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import AddBook from "./AddBook";
 
 export default function BestBook() {
   const [books, setBooks] = useState([]);
@@ -23,6 +24,7 @@ export default function BestBook() {
           <p>{book.status}</p>
         </div>
       ))}
+      <AddBook />
     </div>
   );
 }
