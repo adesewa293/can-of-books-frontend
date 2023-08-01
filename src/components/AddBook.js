@@ -1,17 +1,23 @@
-import React from 'react'
+import {React, useState} from 'react'
+import BookFormModal from './modal'
 
 export default function AddBook() {
+  const [isOpen, setIsOpen] = useState(false)
+  
+  function handleClose() {
+    setIsOpen(true);
+  }
+  function handleClick(){
+    console.log('before', isOpen)
+    setIsOpen(true);
+    console.log('after', isOpen)
+  }
+  
+  console.log('inside', isOpen)
   return (
     <div>
-      <button>AddBook</button>
-    <form>
-    <label htmlFor="name">Book title:</label>
-    <input type="text" id="name" name="name" required /> 
-
-    <label htmlFor="text">Book description:</label>
-    <input type="text" id="description" name="description" required />
-
-    </form>
+      <button onClick={handleClick}>AddBook</button>
+      <BookFormModal show={isOpen} onClose={handleClose}/>
     </div>
     
   )
