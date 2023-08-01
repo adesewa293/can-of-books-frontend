@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function BestBooks() {
@@ -6,8 +6,7 @@ export default function BestBooks() {
 
   const getBooks = async () => {
     const response = await axios.get("https://canob.onrender.com/books/");
-    console.log(response.data)
-    setBooks(response.data)
+    setBooks(response.data);
   };
 
   useEffect(() => {
@@ -17,8 +16,12 @@ export default function BestBooks() {
   return (
     <div>
       bestbooks
-      {books.map((book) => (
-        <p>{book.title}</p>
+      {books.length > 0 && books.map((book) => (
+        <div>
+          <p>{book.title}</p>
+          <p>{book.description}</p>
+          <p>{book.status}</p>
+        </div>
       ))}
     </div>
   );
