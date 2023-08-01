@@ -1,7 +1,7 @@
 import './App.css';
 import BestBook from './components/BestBook';
 import {Route,BrowserRouter,Routes} from 'react-router-dom'
-import About from './components/about';
+import About from './components/About';
 
 function App() {
   return (
