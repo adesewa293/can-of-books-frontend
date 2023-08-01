@@ -5,10 +5,10 @@ export default function AddBook() {
     <div>
       <button>AddBook</button>
     <form>
-    <label for="name">Book title:</label>
+    <label htmlFor="name">Book title:</label>
     <input type="text" id="name" name="name" required /> 
 
-    <label for="text">Book description:</label>
+    <label htmlFor="text">Book description:</label>
     <input type="text" id="description" name="description" required />
 
     </form>
