@@ -27,20 +27,24 @@ export default function BestBook() {
   return (
     <div>
       <h1>Best books</h1>
-      <i>{message}</i>
-      {books.length > 0 ? (
-        books.map((book) => (
-          <div key={book._id}>
-            <b>{book.title}</b>
-            <img src={book.imageUrl} alt={book.title} />
-            <p>{book.description}</p>
-            <p>{book.status}</p>
-            <button onClick={() => handleDelete(book._id)}>Delete Book</button>
-          </div>
-        ))
-      ) : (
-        <p>The book collection is empty</p>
-      )}
+      <div className="best-book">
+        <i>{message}</i>
+        {books.length > 0 ? (
+          books.map((book) => (
+            <div key={book._id}>
+              <b>{book.title}</b>
+              <img src={book.imageUrl} alt={book.title} />
+              <p>{book.description}</p>
+              <p>{book.status}</p>
+              <button onClick={() => handleDelete(book._id)}>
+                Delete Book
+              </button>
+            </div>
+          ))
+        ) : (
+          <p>The book collection is empty</p>
+        )}
+      </div>
       <AddBook />
     </div>
   );
