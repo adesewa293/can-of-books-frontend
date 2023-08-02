@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AddBook from "./AddBook";
-import "./Modal.css";
+import BookFormModal from "./Modal";
 
 export default function BestBook() {
   const [books, setBooks] = useState([]);
   const [message, setMessage] = useState(null);
-<<<<<<< Updated upstream
-=======
   const [bookToEdit, setBookToEdit] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +18,6 @@ export default function BestBook() {
   function handleOpenModal() {
     setIsOpen(true);
   }
->>>>>>> Stashed changes
 
   const getBooks = async () => {
     const response = await axios.get("https://canob.onrender.com/books/");
@@ -34,6 +30,11 @@ export default function BestBook() {
     );
     setMessage(response.data.message);
     getBooks();
+  }
+
+  function handleEdit(book) {
+    setBookToEdit(book);
+    handleOpenModal(true);
   }
 
   useEffect(() => {
@@ -64,13 +65,21 @@ export default function BestBook() {
               >
                 Delete Book
               </button>
+              <button onClick={() => handleEdit(book)}>Edit Book</button>
             </div>
           ))
         ) : (
           <p>The book collection is empty</p>
         )}
       </div>
-      <AddBook />
+      <div>
+        <button onClick={handleOpenModal}>AddBook</button>
+       <BookFormModal
+          book={bookToEdit}
+          show={isOpen}
+          onClose={handleCloseModal}
+        />
+      </div>
     </div>
   );
 }
