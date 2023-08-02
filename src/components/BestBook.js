@@ -24,6 +24,7 @@ export default function BestBook() {
             <b>{book.title}</b>
             <p>{book.description}</p>
             <p>{book.status}</p>
+            <button>Delete Book</button>
           </div>
         ))
       ) : (
