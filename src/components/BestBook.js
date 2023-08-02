@@ -6,6 +6,22 @@ import "./Modal.css";
 export default function BestBook() {
   const [books, setBooks] = useState([]);
   const [message, setMessage] = useState(null);
+<<<<<<< Updated upstream
+=======
+  const [bookToEdit, setBookToEdit] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleCloseModal() {
+    setIsOpen(false);
+    if (bookToEdit) {
+      setBookToEdit(null)
+    }
+  }
+
+  function handleOpenModal() {
+    setIsOpen(true);
+  }
+>>>>>>> Stashed changes
 
   const getBooks = async () => {
     const response = await axios.get("https://canob.onrender.com/books/");
