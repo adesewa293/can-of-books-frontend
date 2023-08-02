@@ -8,9 +8,16 @@
   margin: 20px;
   text-align: center;
   width: 250px;
+  display: flex;
+  flex-direction: column;
 }
 
 .book-cover {
   width: 200px;
   height: 300px;
+}
+
+.delete-button {
+  margin-top: auto;
+  width: fit-content;
 }

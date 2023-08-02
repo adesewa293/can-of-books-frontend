@@ -41,10 +41,13 @@ export default function BestBook() {
               <div>
                 <p>{book.description}</p>
                 <p>{book.status}</p>
-                <button onClick={() => handleDelete(book._id)}>
-                  Delete Book
-                </button>
               </div>
+              <button
+                onClick={() => handleDelete(book._id)}
+                className="delete-button"
+              >
+                Delete Book
+              </button>
             </div>
           ))
         ) : (
