@@ -13,7 +13,9 @@ export default function BestBook() {
   };
 
   async function handleDelete(id) {
-    const response = await axios.delete(`https://canob.onrender.com/books/${id}`);
+    const response = await axios.delete(
+      `https://canob.onrender.com/books/${id}`
+    );
     setMessage(response.data.message);
     getBooks();
   }
@@ -30,6 +32,7 @@ export default function BestBook() {
         books.map((book) => (
           <div key={book._id}>
             <b>{book.title}</b>
+            <img src={book.imageUrl} alt={book.title} />
             <p>{book.description}</p>
             <p>{book.status}</p>
             <button onClick={() => handleDelete(book._id)}>Delete Book</button>
