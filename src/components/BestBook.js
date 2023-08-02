@@ -10,6 +10,7 @@ export default function BestBook() {
   const getBooks = async () => {
     const response = await axios.get("https://canob.onrender.com/books/");
     setBooks(response.data);
+    getBooks();
   };
 
   async function handleDelete(id) {
