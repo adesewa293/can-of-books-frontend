@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Modal.css";
 
-export default function BookFormModal({ show, onClose }) {
-  const [title, setTitle] = useState("");
+export default function BookFormModal({ show, onClose, book }) {
+  console.log('book', book)
+  const [title, setTitle] = useState('');
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
-  const [imageUrl, setImageURL] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+
+  useEffect(() => {
+   if(book){
+    setTitle(book.title)
+    setDescription(book.description)
+    setStatus(book.status)
+    setImageUrl(book.imageUrl)
+   }
+  }, [book])
+  
 
   const handleAddBook = async () => {
     try {
@@ -59,7 +70,7 @@ export default function BookFormModal({ show, onClose }) {
             type="text"
             placeholder="Image URL"
             value={imageUrl}
-            onChange={(e) => setImageURL(e.target.value)}
+            onChange={(e) => setImageUrl(e.target.value)}
           />
           <button onClick={handleAddBook}>Save Book</button>
         </div>
