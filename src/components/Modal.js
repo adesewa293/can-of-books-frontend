@@ -6,6 +6,7 @@ export default function BookFormModal({ show, onClose }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
+  const [imageURL, setImageURL] = useState("");
 
   const handleAddBook = async () => {
     try {
@@ -13,6 +14,7 @@ export default function BookFormModal({ show, onClose }) {
         title,
         description,
         status,
+        imageURL,
       });
 
       console.log("New book added:", response.data);
@@ -52,6 +54,11 @@ export default function BookFormModal({ show, onClose }) {
             placeholder="Status"
             value={status}
             onChange={(e) => setStatus(e.target.value)}
+          />
+          <input
+            type="text"
+            value={imageURL}
+            onChange={(e) => setImageURL(e.target.value)}
           />
           <button onClick={handleAddBook}>Save Book</button>
         </div>
