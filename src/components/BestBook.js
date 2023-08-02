@@ -10,6 +10,9 @@ export default function BestBook() {
 
   function handleCloseModal() {
     setIsOpen(false);
+    if (bookToEdit) {
+      setBookToEdit(null)
+    }
   }
 
   function handleOpenModal() {

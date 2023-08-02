@@ -3,21 +3,19 @@ import axios from "axios";
 import "./Modal.css";
 
 export default function BookFormModal({ show, onClose, book }) {
-  console.log('book', book)
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
-   if(book){
-    setTitle(book.title)
-    setDescription(book.description)
-    setStatus(book.status)
-    setImageUrl(book.imageUrl)
-   }
-  }, [book])
-  
+    if (book) {
+      setTitle(book.title);
+      setDescription(book.description);
+      setStatus(book.status);
+      setImageUrl(book.imageUrl);
+    }
+  }, [book]);
 
   const handleAddBook = async () => {
     try {
@@ -36,6 +34,33 @@ export default function BookFormModal({ show, onClose, book }) {
     }
   };
 
+  const handleEditBook = async () => {
+    try {
+      const response = await axios.put(
+        `https://canob.onrender.com/books/${book._id}`,
+        {
+          title,
+          description,
+          status,
+          imageUrl,
+        }
+      );
+
+      console.log("New book added:", response.data);
+
+      onClose();
+    } catch (error) {
+      console.error("Error adding book:", error.message);
+    }
+  };
+
+  function handleSave() {
+    if (book) {
+      handleEditBook();
+    } else {
+      handleAddBook();
+    }
+  }
   if (!show) {
     return null;
   }
@@ -72,7 +97,7 @@ export default function BookFormModal({ show, onClose, book }) {
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
-          <button onClick={handleAddBook}>Save Book</button>
+          <button onClick={handleSave}>Save Book</button>
         </div>
       </div>
     </div>
