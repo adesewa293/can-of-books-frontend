@@ -31,14 +31,20 @@ export default function BestBook() {
         <i>{message}</i>
         {books.length > 0 ? (
           books.map((book) => (
-            <div key={book._id}>
-              <b>{book.title}</b>
-              <img src={book.imageUrl} alt={book.title} />
-              <p>{book.description}</p>
-              <p>{book.status}</p>
-              <button onClick={() => handleDelete(book._id)}>
-                Delete Book
-              </button>
+            <div key={book._id} className="book-entry">
+              <h2>{book.title}</h2>
+              <img
+                className="book-cover"
+                src={book.imageUrl}
+                alt={book.title}
+              />
+              <div>
+                <p>{book.description}</p>
+                <p>{book.status}</p>
+                <button onClick={() => handleDelete(book._id)}>
+                  Delete Book
+                </button>
+              </div>
             </div>
           ))
         ) : (
