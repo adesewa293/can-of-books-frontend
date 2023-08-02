@@ -36,12 +36,15 @@ export default function BookFormModal({ show, onClose, book }) {
 
   const handleEditBook = async () => {
     try {
-      const response = await axios.put(`https://canob.onrender.com/books/${book._id}`,{
-        title,
-        description,
-        status,
-        imageUrl,
-      });
+      const response = await axios.put(
+        `https://canob.onrender.com/books/${book._id}`,
+        {
+          title,
+          description,
+          status,
+          imageUrl,
+        }
+      );
 
       console.log("New book added:", response.data);
 
@@ -94,9 +97,7 @@ export default function BookFormModal({ show, onClose, book }) {
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
-          <button onClick={handleSave}>
-            Save Book
-          </button>
+          <button onClick={handleSave}>Save Book</button>
         </div>
       </div>
     </div>
