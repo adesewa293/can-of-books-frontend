@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import '../components/modal.css'
 
 export default function BookFormModal({ show, onClose }) {
   const [title, setTitle] = useState("");
