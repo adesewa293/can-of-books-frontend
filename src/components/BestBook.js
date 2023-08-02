@@ -16,14 +16,14 @@ export default function BestBook() {
 
   return (
     <div>
-      bestbook
-      {books.length > 0 && books.map((book) => (
+      <h1>Best books</h1>
+      {books.length > 0 ? books.map((book) => (
         <div key={book._id}>
-          <p>{book.title}</p>
+          <b>{book.title}</b>
           <p>{book.description}</p>
           <p>{book.status}</p>
-        </div>
-      ))}
+        </div> 
+      )): <p>The book collection is empty</p>}
       <AddBook />
     </div>
   );
