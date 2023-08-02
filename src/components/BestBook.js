@@ -17,6 +17,8 @@ export default function BestBook() {
     getBooks();
   }, []);
 
+getBooks();
+
   return (
     <div>
       <h1>Best books</h1>
