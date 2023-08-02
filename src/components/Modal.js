@@ -57,6 +57,7 @@ export default function BookFormModal({ show, onClose }) {
           />
           <input
             type="text"
+            placeholder="Image URL"
             value={imageURL}
             onChange={(e) => setImageURL(e.target.value)}
           />
