@@ -1,18 +1,12 @@
-import React from 'react';
-import './components/Footer.css';
-import Navbar from 'react-bootstrap/Navbar';
+import React from "react";
+import "./Footer.css"
 
-
-
-export default function footer() {
+function Footer() {
     return (
-    <div>
-        <Navbar>
-            <Navbar.id>
-                By Raaqiya Ali & Darren Holmes & Adesewa Aishat
-            </Navbar.id>
-
-        </Navbar>
-    </div>
-    )
+        <div>
+            <h1>By Darren & Adesewa & Raaqiya</h1>
+        </div>
+        );
 }
+
+export default Footer;

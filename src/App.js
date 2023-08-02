@@ -1,22 +1,30 @@
-import { HelmetProvider } from 'react-helmet-async';
-import BestBook from './components/BestBook';
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import About from './components/About';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./App.css";
 
-function App() {
-  return (
-    <div className='App'>
-      <HelmetProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<BestBook />} />
-            <Route path='/about' element={<About />} />
-          </Routes>
+import Main from "./components/Main"
+import About from "./components/About";
+import BestBook from "./components/BestBook";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import { BrowserRouter, Routes, Route, Router} from "react-router-dom"
+
+
+const routing = (
+  <Router>
+    <div>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" component={Main} />
+          <Route path="/About Us" component={About} />
+          <Route path="/BestBook" component={BestBook} />
+        </Routes>
         </BrowserRouter>
-      </HelmetProvider>
+      <Footer />
     </div>
-  );
-}
+  </Router>
+);
 
-export default App;
+ReactDOM.render(routing, document.getElementById("root"));

@@ -1,26 +1,17 @@
-import './components/Header.css';
-import React from 'react';
-import { Navbar, NavItem } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
-import Image from 'react-bootstrap/Image';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./Header.css"
 
-
-export default function header() {
+function Header() {
     return (
-        <header>
-            <image>add image </image>
-            <div className='txt-200-regular '>LOGO</div>
-            <Navbar className='flex--container'>
-                <NavItem>
-                    <Link className='nav-link' to='/'>Home</Link>
-                </NavItem>
-                <NavItem>
-                    <Link className='nav-link' to='/'>About</Link>
-                </NavItem>
-                <NavItem>
-                        <Link className='nav-link' to='/profile'>Profile</Link>
-                </NavItem>
-            </Navbar>
-        </header>
-        )
+        <nav>
+            <NavLink exact activeClassName="active" to="/">
+            BestBook
+            </NavLink>
+            <NavLink activeClassName="active" to="/About">
+            About Us
+            </NavLink>
+        </nav>
+        );
 }
+export default Header;
