@@ -1,5 +1,6 @@
 import { React, useState } from "react";
-import BookFormModal from "./modal";
+import BookFormModal from "./Modal";
+import "./Modal.css";
 
 export default function AddBook() {
   const [isOpen, setIsOpen] = useState(false);
