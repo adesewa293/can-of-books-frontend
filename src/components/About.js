@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 
 
 export default function About() {
-  return (
+    return (
     <div>
         <Helmet>
             <title>About Us</title>
@@ -22,6 +22,6 @@ export default function About() {
 
         </main>
     </div>
-  )
+    )
 }
 
