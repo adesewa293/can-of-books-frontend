@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("../public/books.jpg") center/cover fixed no-repeat;
+}
+
+h1 {
+  font-size: 6rem;
+  color: antiquewhite;
+  font-family: "Great Vibes", cursive;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-left: 10px;
+  padding: 5px;
+}
+
+img {
+  margin: auto;
+}
+.best-book {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book-entry {
+  margin: 20px;
+  text-align: center;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
+
+.book-cover {
+  width: 200px;
+  height: 300px;
+}
+
+.delete-button {
+  margin-top: auto;
+  width: fit-content;
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding: 5px;
+}
