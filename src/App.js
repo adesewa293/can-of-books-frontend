@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./App.css";
 
 import Main from "./components/Main"
@@ -8,23 +7,19 @@ import BestBook from "./components/BestBook";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-import { BrowserRouter, Routes, Route, Router} from "react-router-dom"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
-
-const routing = (
-  <Router>
+export default function App() {
     <div>
-      <Header />
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" component={Main} />
-          <Route path="/About Us" component={About} />
-          <Route path="/BestBook" component={BestBook} />
+          <Route exact path="/" element={<Main/>} />
+          <Route path="/AboutUs" element={<About/>} />
+          <Route path="/BestBook" element={<BestBook/>} />
         </Routes>
         </BrowserRouter>
       <Footer />
     </div>
-  </Router>
-);
+};
 
-ReactDOM.render(routing, document.getElementById("root"));
+
