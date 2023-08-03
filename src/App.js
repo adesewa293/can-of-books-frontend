@@ -11,6 +11,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 export default function App() {
     <div>
+    <Header/>
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Main/>} />
