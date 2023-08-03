@@ -1,0 +1,62 @@
+
+header {
+    overflow: hidden;
+
+}
+nav {
+    backdrop-filter: grayscale(30%) blur(2.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    color: white;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: "Great Vibes", cursive;
+    font-weight: bold;
+    border: 1px solid orange;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0 10px;
+    
+}
+
+    
+nav a:hover:not(.active):hover, nav a:hover  {
+    background-color: orange ;
+    color: whitesmoke;
+}
+    
+.active {
+    color: white;
+    
+}
+
+.active, nav a {
+    background-color:darkgoldenrod;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+    background-color: orange;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+.btn button {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: end;
+    grid-gap: 5px;
+    justify-content: flex-end
+}
