@@ -48,14 +48,18 @@ button {
     border-radius: 50%; 
     background-color: orange;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+   
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 16px;
     cursor: pointer;
-    margin-left: 20%
+    
 }
 
 .btn {
-    margin-left: 20%;
+
 }
