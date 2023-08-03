@@ -68,10 +68,10 @@ export default function BookFormModal({ show, onClose, book }) {
   return (
     <div className="modal-overlay">
       <div className="modal">
+        <span className="close" onClick={onClose}>
+          &times;
+        </span>
         <div className="modal-content">
-          <span className="close" onClick={onClose}>
-            &times;
-          </span>
           <h2>New Book Form</h2>
           <input
             type="text"
