@@ -1,11 +1,21 @@
 div {
-    background-color: lightgrey;
+    
     padding: 20px 0;
     text-align: center;
     font-family: "Arial", sans-serif;
+    color: darkorange;
 }
     
 div h1 {
     font-size: 18px;
     margin: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    backdrop-filter: grayscale(30%) blur(2.5px);
+
 }

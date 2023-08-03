@@ -1,31 +1,61 @@
 
+header {
+    overflow: hidden;
 
+}
 nav {
-    background-color: lightgrey;
+    backdrop-filter: grayscale(30%) blur(2.5px);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    padding: 5px;
+    color: white;
+    
 }
 
-    nav a {
+nav a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 18px;
-    font-family: "Arial", sans-serif;
-    border: 2px solid black;
+    font-family: "Great Vibes", cursive;
+    font-weight: bold;
+    border: 1px solid orange;
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 30px;
     transition: background-color 0.3s, color 0.3s;
-}
+    margin: 0 10px;
     
-    nav a:hover {
-    background-color: white;
-    color: black;
-}
-    
-    .active {
-    background-color: white;
-    color: black;
 }
 
+    
+nav a:hover:not(.active):hover, nav a:hover  {
+    background-color: orange ;
+    color: whitesmoke;
+}
+    
+.active {
+    color: white;
+    
+}
+
+.active, nav a {
+    background-color:darkgoldenrod;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 20%
+}
+
+.btn {
+    margin-left: 20%;
+}
