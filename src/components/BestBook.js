@@ -11,7 +11,7 @@ export default function BestBook() {
   function handleCloseModal() {
     setIsOpen(false);
     if (bookToEdit) {
-      setBookToEdit(null)
+      setBookToEdit(null);
     }
   }
 
@@ -43,7 +43,7 @@ export default function BestBook() {
 
   return (
     <div>
-      <h1>Best books</h1>
+      <h1>Best Books</h1>
       <div className="best-book">
         <i>{message}</i>
         {books.length > 0 ? (
@@ -59,13 +59,20 @@ export default function BestBook() {
                 <p>{book.description}</p>
                 <p>{book.status}</p>
               </div>
-              <button
-                onClick={() => handleDelete(book._id)}
-                className="delete-button"
-              >
-                Delete Book
-              </button>
-              <button onClick={() => handleEdit(book)}>Edit Book</button>
+              <div className="button-container">
+                <button
+                  onClick={() => handleDelete(book._id)}
+                  className="delete-button"
+                >
+                  Delete Book
+                </button>
+                <button
+                  className="edit-button"
+                  onClick={() => handleEdit(book)}
+                >
+                  Edit Book
+                </button>
+              </div>
             </div>
           ))
         ) : (
@@ -74,7 +81,7 @@ export default function BestBook() {
       </div>
       <div>
         <button onClick={handleOpenModal}>AddBook</button>
-       <BookFormModal
+        <BookFormModal
           book={bookToEdit}
           show={isOpen}
           onClose={handleCloseModal}
