@@ -3,7 +3,6 @@ import "./App.css";
 
 import Main from "./components/Main";
 import About from "./components/About";
-import BestBook from "./components/BestBook";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -17,7 +16,6 @@ export default function App() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route path="/AboutUs" element={<About />} />
-          <Route path="/BestBook" element={<BestBook />} />
         </Routes>
         <Footer />
       </div>
