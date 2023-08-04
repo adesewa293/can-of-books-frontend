@@ -1,0 +1,17 @@
+
+.font{
+    color:bisque;
+    font-size:larger;
+    font-family: "Great Vibes", cursive;
+
+}
+
+.txt {
+    color:antiquewhite
+}
+
+div {
+    backdrop-filter: grayscale(30%) blur(2.5px);
+}
+
+
